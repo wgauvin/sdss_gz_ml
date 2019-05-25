@@ -1,0 +1,8 @@
+ENV/
+.vscode/
+*.h5
+tmp/
+data/
+**/__pycache__/
+job/
+

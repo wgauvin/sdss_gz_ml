@@ -1,0 +1,8 @@
+numpy
+pandas
+astropy
+scikit-learn
+keras
+tensorflow
+cloudml-hypertune
+argparse

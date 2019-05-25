@@ -1,0 +1,58 @@
+trainingInput:
+  hyperparameters:
+    goal: MINIMIZE
+    hyperparameterMetricTag: "redshift_nn_z_err"
+    maxTrials: 50
+    maxParallelTrials: 3
+    enableTrialEarlyStopping: True
+    params:
+    - parameterName: dense-units
+      type: DISCRETE
+      discreteValues:
+        - 64
+        - 128
+        - 256
+        - 512
+        - 1024
+        - 2048
+    - parameterName: dropout-rate-1
+      type: DOUBLE
+      minValue: 0.0
+      maxValue: 0.1
+      scaleType: UNIT_LINEAR_SCALE
+    - parameterName: dropout-rate-2
+      type: DOUBLE
+      minValue: 0.1
+      maxValue: 0.3
+      scaleType: UNIT_LINEAR_SCALE
+    - parameterName: batch-size
+      type: DISCRETE
+      discreteValues:
+        - 8
+        - 16
+        - 32
+        - 64
+        - 128
+    - parameterName: l1-reg
+      type: DOUBLE
+      minValue: 0.0001
+      maxValue: 1
+      scaleType: UNIT_REVERSE_LOG_SCALE
+    - parameterName: l2-reg
+      type: DOUBLE
+      minValue: 0.0001
+      maxValue: 1
+      scaleType: UNIT_REVERSE_LOG_SCALE
+    - parameterName: lr
+      type: DOUBLE
+      minValue: 0.000001
+      maxValue: 0.001
+      scaleType: UNIT_REVERSE_LOG_SCALE
+    - parameterName: num-hidden-layers
+      type: DISCRETE
+      discreteValues:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5

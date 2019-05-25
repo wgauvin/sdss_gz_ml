@@ -1,0 +1,17 @@
+# Dockerfile
+FROM wgauvin/base-astroml:latest
+
+WORKDIR /app
+
+COPY entrypoint-master.sh ./entrypoint.sh
+
+RUN chmod u+x entrypoint.sh && \
+    gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS
+
+ENTRYPOINT [ "./entrypoint.sh" ]
+
+COPY requirements.txt ./
+RUN pip install -U -r requirements.txt
+
+COPY master.py ./
+

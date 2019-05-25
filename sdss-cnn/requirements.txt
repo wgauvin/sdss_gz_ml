@@ -1,0 +1,9 @@
+numpy
+pandas
+astropy
+scikit-learn
+keras
+tensorflow
+cloudml-hypertune
+argparse
+-e file:sdss_gz_data_pkg#egg=sdss_gz_data

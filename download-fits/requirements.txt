@@ -1,0 +1,5 @@
+google-cloud-pubsub
+aiostream
+asyncio
+aiohttp
+aiofiles

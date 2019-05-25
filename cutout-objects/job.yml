@@ -1,0 +1,23 @@
+# job.yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: cutout-objects
+spec:
+  parallelism: 24
+  template:
+    metadata:
+      name: cutout-objects
+    spec:
+      containers:
+        - name: worker
+          image: gcr.io/astroml-ast80014/cutout-objects:latest
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: "0.1"
+              memory: 750M
+            limits:
+              cpu: "0.2"
+              memory: "1Gi"
+      restartPolicy: OnFailure

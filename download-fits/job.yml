@@ -1,0 +1,19 @@
+# job.yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: dl-fits
+spec:
+  parallelism: 5
+  template:
+    metadata:
+      name: dl-fits
+    spec:
+      containers:
+        - name: worker
+          image: gcr.io/astroml-ast80014/worker
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: 0.5
+      restartPolicy: OnFailure

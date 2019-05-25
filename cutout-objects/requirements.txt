@@ -1,0 +1,9 @@
+-e file:sdss_gz_data_pkg#egg=sdss_gz_data
+google-cloud-pubsub
+aiostream
+asyncio
+aiohttp
+aiofiles
+numpy
+aplpy
+Pillow
